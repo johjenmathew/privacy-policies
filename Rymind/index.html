@@ -1,156 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rymind Privacy Policy</title>
   <meta
     name="description"
-    content="Privacy Policy for Rymind, the reminder and task management app."
+    content="Rymind Privacy Policy for reminders, tasks, backup, sync beta, analytics, and crash diagnostics."
   />
   <style>
     :root {
-      color-scheme: light;
-      --bg: #eef3f9;
-      --surface: rgba(255, 255, 255, 0.88);
-      --surface-border: rgba(18, 35, 58, 0.08);
-      --text: #11243b;
-      --muted: #5c6f87;
-      --accent: #2e6fd8;
-      --accent-deep: #173a63;
-      --highlight: #e2b472;
-      --shadow: 0 24px 60px rgba(14, 28, 48, 0.12);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
+      --bg: #f6f3ee;
+      --bg-accent: #efe7db;
+      --surface: rgba(255, 252, 247, 0.82);
+      --surface-strong: #fffaf2;
+      --border: rgba(111, 89, 58, 0.14);
+      --text: #201a15;
+      --muted: #6c6055;
+      --accent: #8c6b43;
+      --accent-strong: #6f5130;
+      --accent-soft: rgba(140, 107, 67, 0.12);
+      --shadow: 0 18px 60px rgba(61, 44, 23, 0.10);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 980px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: "SF Pro Display", "Segoe UI", Inter, system-ui, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(46, 111, 216, 0.14), transparent 28%),
-        radial-gradient(circle at top right, rgba(226, 180, 114, 0.18), transparent 24%),
-        linear-gradient(180deg, #f6f9fc 0%, var(--bg) 100%);
-      line-height: 1.65;
-      padding: 32px 20px 72px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .shell {
-      max-width: 900px;
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(182, 152, 113, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(143, 125, 102, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8f4ed 0%, #f5f1ea 40%, #f2ede6 100%);
+      font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    .page-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-shell::before,
+    .page-shell::after {
+      content: "";
+      position: fixed;
+      z-index: 0;
+      border-radius: 999px;
+      pointer-events: none;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+
+    .page-shell::before {
+      width: 320px;
+      height: 320px;
+      top: -80px;
+      right: -80px;
+      background: radial-gradient(circle, rgba(160, 132, 96, 0.18), transparent 70%);
+    }
+
+    .page-shell::after {
+      width: 280px;
+      height: 280px;
+      bottom: -60px;
+      left: -60px;
+      background: radial-gradient(circle, rgba(115, 150, 136, 0.14), transparent 70%);
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-xl);
-      padding: 28px 28px 24px;
-      background: linear-gradient(135deg, #15355b 0%, #2d6fd8 58%, #5f9cff 100%);
-      color: #f8fbff;
-      box-shadow: var(--shadow);
+      padding: 40px 0 24px;
     }
 
-    .hero::after {
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 36px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.92), rgba(250,244,234,0.86)),
+        var(--surface);
+      border: 1px solid rgba(111, 89, 58, 0.10);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card::after {
       content: "";
       position: absolute;
-      inset: auto -80px -80px auto;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0));
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.45) 18%, transparent 42%);
       pointer-events: none;
     }
 
-    .brand {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .brand-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(14px);
-    }
-
-    .brand-mark svg {
-      width: 30px;
-      height: 30px;
-      display: block;
-    }
-
-    .eyebrow {
-      margin: 0 0 6px;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      color: rgba(248, 251, 255, 0.76);
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #a78358, #765433);
+      box-shadow: 0 0 0 6px rgba(140, 107, 67, 0.08);
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(2rem, 3.6vw, 3.2rem);
-      line-height: 1.08;
+      margin: 18px 0 10px;
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1.02;
       letter-spacing: -0.03em;
+      font-weight: 700;
     }
 
-    .subtitle {
-      margin: 14px 0 0;
-      max-width: 640px;
-      color: rgba(248, 251, 255, 0.88);
-      font-size: 1.02rem;
+    .hero-subtitle {
+      max-width: 700px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
     }
 
-    .meta {
+    .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
+      gap: 12px;
+      margin-top: 24px;
     }
 
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .meta-pill {
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #f8fbff;
+      background: rgba(255, 250, 242, 0.78);
+      border: 1px solid var(--border);
+      color: var(--muted);
       font-size: 0.92rem;
     }
 
-    .card {
-      margin-top: 22px;
-      padding: 30px 28px;
-      border-radius: var(--radius-xl);
-      background: var(--surface);
-      border: 1px solid var(--surface-border);
-      box-shadow: var(--shadow);
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 24px;
+      padding: 8px 0 56px;
+    }
+
+    .side-nav {
+      position: sticky;
+      top: 20px;
+      align-self: start;
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 251, 246, 0.72);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 14px 40px rgba(61, 44, 23, 0.05);
+    }
+
+    .side-nav h2 {
+      margin: 0 0 14px;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+    }
+
+    .side-nav ol {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .side-nav li {
+      margin: 8px 0;
+      color: var(--muted);
+    }
+
+    .side-nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .side-nav a:hover {
+      color: var(--accent-strong);
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .section-card {
+      padding: 26px 26px 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 251, 246, 0.82);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 44px rgba(61, 44, 23, 0.06);
       backdrop-filter: blur(14px);
     }
 
-    h2 {
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #9e7a50, #755533);
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      box-shadow: 0 10px 22px rgba(117, 85, 51, 0.22);
+    }
+
+    h3 {
       margin: 0 0 12px;
-      font-size: 1.16rem;
-      color: var(--accent-deep);
+      font-size: 1.4rem;
+      line-height: 1.2;
       letter-spacing: -0.02em;
     }
 
     p {
       margin: 0 0 14px;
+    }
+
+    p:last-child,
+    ul:last-child {
+      margin-bottom: 0;
     }
 
     ul {
@@ -162,171 +265,314 @@
       margin-top: 8px;
     }
 
-    .section + .section {
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(18, 35, 58, 0.08);
+    .callout {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, rgba(140, 107, 67, 0.08), rgba(140, 107, 67, 0.04));
+      border: 1px solid rgba(140, 107, 67, 0.12);
+      color: #4f4338;
     }
 
-    .contact {
-      display: inline-flex;
+    .contact-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
       align-items: center;
-      gap: 10px;
-      padding: 14px 16px;
+      justify-content: space-between;
+      padding: 22px 24px;
+      margin-top: 20px;
       border-radius: var(--radius-lg);
-      background: rgba(46, 111, 216, 0.08);
-      border: 1px solid rgba(46, 111, 216, 0.12);
-      color: var(--accent-deep);
-      font-weight: 600;
-      text-decoration: none;
+      background: linear-gradient(135deg, #2d241d, #423327);
+      color: #f8efe4;
+      box-shadow: 0 18px 40px rgba(33, 25, 19, 0.18);
     }
 
-    .footer {
-      margin-top: 18px;
+    .contact-card strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-card a {
+      color: #f8efe4;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(248, 239, 228, 0.35);
+    }
+
+    footer {
+      padding: 0 0 56px;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       text-align: center;
     }
 
-    a {
-      color: inherit;
+    @media (max-width: 920px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-nav {
+        position: relative;
+        top: 0;
+      }
     }
 
     @media (max-width: 640px) {
-      body {
-        padding: 20px 14px 48px;
+      .container {
+        width: min(calc(100% - 20px), var(--max));
       }
 
-      .hero,
-      .card {
-        padding: 22px 18px;
-        border-radius: 24px;
+      .hero {
+        padding-top: 18px;
       }
 
-      .brand {
-        gap: 12px;
+      .hero-card,
+      .section-card,
+      .side-nav {
+        padding: 20px;
+        border-radius: 22px;
       }
 
-      .brand-mark {
-        width: 46px;
-        height: 46px;
-        border-radius: 16px;
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .hero-meta {
+        gap: 10px;
+      }
+
+      .meta-pill {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero">
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.43 6.33A7.2 7.2 0 1 1 8.19 5.89" stroke="#F7F1E6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M14.96 8.22A4.8 4.8 0 1 1 9.46 7.93" stroke="#F7F1E6" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="17.85" cy="6.1" r="1.95" fill="#E2B472"/>
-          </svg>
+  <div class="page-shell">
+    <div class="container">
+      <header class="hero">
+        <div class="hero-card">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Rymind Privacy
+          </div>
+          <h1>Privacy Policy</h1>
+          <p class="hero-subtitle">
+            Rymind is built around dependable reminders, calm task follow-through, and respectful data handling.
+            This page explains what the app stores, what optional services are involved, and what choices you keep.
+          </p>
+          <div class="hero-meta">
+            <div class="meta-pill">Last updated: April 24, 2026</div>
+            <div class="meta-pill">Android app package: <strong>com.avora.planner</strong></div>
+          </div>
         </div>
-        <div>
-          <p class="eyebrow">Privacy Policy</p>
-          <h1>Rymind</h1>
-        </div>
-      </div>
-      <p class="subtitle">
-        Rymind is a reminder and task management app. This page explains what information the app handles,
-        how it is used, and the choices available to users.
-      </p>
-      <div class="meta">
-        <div class="chip">Last updated: April 10, 2026</div>
-        <div class="chip">Package: com.avora.planner</div>
-      </div>
-    </section>
+      </header>
 
-    <section class="card">
-      <div class="section">
-        <h2>1. Information the app handles</h2>
-        <p>
-          Rymind stores reminder titles, notes, task names, reminder dates and times, repeat settings,
-          task state, app appearance settings, and app language settings on the device so the app can function.
-        </p>
-        <p>
-          If the user enables the optional "Call someone" reminder feature, Rymind opens Android's system
-          contact picker. Rymind does not request broad contacts access. It only receives the contact name
-          and phone number that the user explicitly chooses through the picker.
-        </p>
-        <p>Rymind does not require account sign-in in the current implementation.</p>
-      </div>
+      <main class="layout">
+        <aside class="side-nav" aria-label="Policy sections">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#section-1">Information the app handles</a></li>
+            <li><a href="#section-2">How information is used</a></li>
+            <li><a href="#section-3">Data sharing and third-party services</a></li>
+            <li><a href="#section-4">Data storage and retention</a></li>
+            <li><a href="#section-5">Permissions and device capabilities</a></li>
+            <li><a href="#section-6">Your choices</a></li>
+            <li><a href="#section-7">Children's privacy</a></li>
+            <li><a href="#section-8">Changes to this policy</a></li>
+            <li><a href="#section-9">Contact</a></li>
+          </ol>
+        </aside>
 
-      <div class="section">
-        <h2>2. How information is used</h2>
-        <p>Rymind uses reminder, task, and contact-selection data only to provide core app features such as:</p>
-        <ul>
-          <li>showing reminders and tasks in the app</li>
-          <li>scheduling alerts and lock-screen alarm experiences</li>
-          <li>reopening the phone dialer for call reminders</li>
-          <li>restoring information after device reboot</li>
-          <li>applying selected theme and language preferences</li>
-        </ul>
-      </div>
+        <section class="content">
+          <article class="section-card" id="section-1">
+            <div class="section-number">1</div>
+            <h3>Information the app handles</h3>
+            <p>
+              Rymind stores reminder titles, notes, task names, checklist items, reminder dates and times,
+              repeat settings, completion state, app appearance settings, and app language settings on the
+              device so the app can function.
+            </p>
+            <p>
+              If you use the optional "Call someone" reminder feature, Rymind opens Android's system contact
+              picker. Rymind does not request broad contacts access. Rymind only receives the contact name
+              and phone number that you explicitly choose through the picker.
+            </p>
+            <p>
+              If you share text or an image into Rymind, the app handles only the content you explicitly share.
+              Shared images may be processed on-device with text recognition so Rymind can extract text and
+              prepare a reminder draft. Shared content is used only to create or prefill reminder or task content for you.
+            </p>
+            <p>Rymind does not require account sign-in for normal use.</p>
+            <p>
+              If Google sign-in and sync beta are available in your build, signing in remains optional.
+              Signed-in beta users may sync reminders, tasks, checklist items, repeat/completion state,
+              and deletion state through Firebase Authentication and Cloud Firestore. Device-local delivery
+              diagnostics, widget prompt state, engagement streaks and milestone state, theme/language
+              preferences, and Android permission state remain local to the device.
+            </p>
+          </article>
 
-      <div class="section">
-        <h2>3. Data sharing</h2>
-        <p>Rymind does not sell personal information.</p>
-        <p>Rymind does not share reminders, tasks, or selected contact information with third parties in the current app implementation.</p>
-        <p>Rymind does not include advertising SDKs or analytics SDKs in the current app implementation.</p>
-      </div>
+          <article class="section-card" id="section-2">
+            <div class="section-number">2</div>
+            <h3>How information is used</h3>
+            <p>
+              Rymind uses your reminder, task, checklist, contact-selection, and shared-content data only
+              to provide core app features such as:
+            </p>
+            <ul>
+              <li>Showing reminders and tasks inside the app</li>
+              <li>Scheduling alerts and lock-screen alarm experiences</li>
+              <li>Reopening the phone dialer for call reminders</li>
+              <li>Restoring your information after device reboot</li>
+              <li>Applying your selected theme and language preferences</li>
+              <li>Preparing reminder drafts from text or images you explicitly share with the app</li>
+              <li>Exporting or importing backup files of reminders, tasks, and checklist items</li>
+              <li>Syncing signed-in beta user reminder and task data across Android devices when sync beta is enabled</li>
+            </ul>
+          </article>
 
-      <div class="section">
-        <h2>4. Data storage and retention</h2>
-        <p>Reminder and task data is stored locally on the device in the app's private storage.</p>
-        <p>Rymind does not transmit reminder, task, or selected contact data to developer-operated servers in the current app implementation.</p>
-        <p>Data remains on the device until it is edited, deleted, cleared through app-data removal, or removed by uninstalling the app.</p>
-      </div>
+          <article class="section-card" id="section-3">
+            <div class="section-number">3</div>
+            <h3>Data sharing and third-party services</h3>
+            <p>Rymind does not sell your personal information.</p>
+            <p>
+              Rymind does not sell your reminders, tasks, checklist items, selected contact information,
+              or shared-content payloads.
+            </p>
+            <p>Rymind does not include advertising SDKs in the current app implementation.</p>
+            <p>
+              If you choose optional Google sign-in and sync beta, reminder, task, and checklist data needed
+              for sync is stored in Firebase services under your signed-in account so it can sync across your
+              Android devices. This data is not used for advertising.
+            </p>
+            <p>
+              Rymind may include Firebase Analytics in release builds to collect limited product-usage analytics
+              for activation, retention, reminder follow-through, widget adoption, sync health, and share-capture
+              measurement. These analytics are limited to operational metadata such as event names, counts,
+              repeat usage, widget type, permission state, sync state, share-import type, and similar product-flow signals.
+              Rymind does not send reminder titles, notes, checklist text, selected contact names, phone numbers,
+              or shared text or image payloads through product analytics.
+            </p>
+            <p>
+              Rymind may include Firebase Crashlytics in release builds to collect crash reports and technical
+              stability diagnostics, such as stack traces, app version, device and Android version, enabled
+              reminder-delivery access state, and limited operational breadcrumbs about reminder, backup,
+              and sync actions. Rymind does not send reminder titles, notes, checklist text, selected contact names,
+              phone numbers, or shared text or image payloads through crash diagnostics.
+            </p>
+            <div class="callout">
+              Release telemetry is limited to product health and operational measurement. User-authored reminder
+              content is intentionally excluded from analytics and crash diagnostics.
+            </div>
+          </article>
 
-      <div class="section">
-        <h2>5. Permissions and device capabilities</h2>
-        <p>Rymind may request or rely on:</p>
-        <ul>
-          <li>notifications</li>
-          <li>exact alarms</li>
-          <li>full-screen intent</li>
-          <li>wake lock</li>
-          <li>boot completed support</li>
-        </ul>
-        <p>Rymind does not request <code>READ_CONTACTS</code> or <code>CALL_PHONE</code>. Contact selection uses the Android system picker, and calling uses the system dialer.</p>
-      </div>
+          <article class="section-card" id="section-4">
+            <div class="section-number">4</div>
+            <h3>Data storage and retention</h3>
+            <p>Your reminder and task data is stored locally on your device in the app's private storage.</p>
+            <p>
+              If you export a backup, the backup file is written only to the device or storage location
+              you choose through Android's file picker.
+            </p>
+            <p>
+              If you enable sync beta, a synced copy of reminders, tasks, checklist items, repeat settings,
+              completion state, and deletion state may also be stored in Firebase Cloud Firestore under your account.
+            </p>
+            <p>
+              Rymind does not operate a custom developer server for your reminder or task content in the
+              current app implementation.
+            </p>
+            <p>
+              If crash diagnostics are enabled in a release build, technical crash-report data may be processed
+              by Firebase Crashlytics for stability monitoring.
+            </p>
+            <p>
+              If product analytics are enabled in a release build, limited usage analytics may be processed
+              by Firebase Analytics to help measure app activation, retention, follow-through, and feature adoption.
+            </p>
+            <p>
+              Data remains on your device until you edit it, delete it, clear the app's data, restore a replacement
+              backup, or uninstall the app. If sync beta is enabled, synced cloud copies may remain until the
+              corresponding items are deleted through sync or the account/provider data is removed.
+            </p>
+          </article>
 
-      <div class="section">
-        <h2>6. User choices</h2>
-        <ul>
-          <li>delete reminders and tasks from within the app</li>
-          <li>disable or deny notification and alarm-related access in Android settings</li>
-          <li>clear app data or uninstall the app to remove locally stored data</li>
-        </ul>
-      </div>
+          <article class="section-card" id="section-5">
+            <div class="section-number">5</div>
+            <h3>Permissions and device capabilities</h3>
+            <p>Rymind may request or rely on the following Android permissions and capabilities:</p>
+            <ul>
+              <li>Notifications, to deliver reminder alerts</li>
+              <li>Exact alarms, to trigger reminders at the scheduled time</li>
+              <li>Full-screen intent, to present alarm UI when appropriate</li>
+              <li>Wake lock and boot completed support, to reschedule and deliver alarms reliably after restart</li>
+              <li>Network access and network-state detection, when optional sync and release telemetry features are available</li>
+            </ul>
+            <p>
+              Rymind does not request <code>READ_CONTACTS</code> or <code>CALL_PHONE</code>. Contact selection
+              uses the Android system picker, and calling uses the system dialer.
+            </p>
+          </article>
 
-      <div class="section">
-        <h2>7. Children's privacy</h2>
-        <p>
-          Rymind is not directed to children under the age required by applicable law in the user's region
-          and is not designed to knowingly collect personal information from children.
-        </p>
-      </div>
+          <article class="section-card" id="section-6">
+            <div class="section-number">6</div>
+            <h3>Your choices</h3>
+            <p>You can:</p>
+            <ul>
+              <li>Use Rymind without signing in</li>
+              <li>Delete reminders and tasks from within the app</li>
+              <li>Export a backup file and restore a backup after reviewing the restore preview</li>
+              <li>Disable or deny notification and alarm-related access in Android settings</li>
+              <li>Sign out of sync beta while keeping local device data</li>
+              <li>Clear app data or uninstall the app to remove locally stored data</li>
+            </ul>
+            <p>
+              Rymind does not currently provide a separate in-app toggle for release analytics or crash diagnostics
+              when those services are enabled in the shipped build configuration.
+            </p>
+          </article>
 
-      <div class="section">
-        <h2>8. Policy changes</h2>
-        <p>
-          This policy may be updated to reflect product, legal, or platform changes. The hosted privacy policy
-          URL used in Google Play should always match the latest approved version.
-        </p>
-      </div>
+          <article class="section-card" id="section-7">
+            <div class="section-number">7</div>
+            <h3>Children's privacy</h3>
+            <p>
+              Rymind is not directed to children under the age required by applicable law in your region,
+              and the app is not designed to knowingly collect personal information from children.
+            </p>
+          </article>
 
-      <div class="section">
-        <h2>9. Contact</h2>
-        <a class="contact" href="mailto:johjen.mathew@gmail.com">johjen.mathew@gmail.com</a>
-      </div>
-    </section>
+          <article class="section-card" id="section-8">
+            <div class="section-number">8</div>
+            <h3>Changes to this policy</h3>
+            <p>
+              This policy may be updated to reflect product, legal, or platform changes. The latest version
+              should also be published on the public privacy policy URL used for app distribution.
+            </p>
+          </article>
 
-    <p class="footer">Rymind Privacy Policy</p>
-  </main>
+          <article class="section-card" id="section-9">
+            <div class="section-number">9</div>
+            <h3>Contact</h3>
+            <p>If you have questions about this policy, contact:</p>
+
+            <div class="contact-card">
+              <div>
+                <strong>Rymind Support</strong>
+                <span>Privacy, sync, data handling, and policy questions</span>
+              </div>
+              <a href="mailto:johjen.mathew@gmail.com">johjen.mathew@gmail.com</a>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        Rymind Privacy Policy · Calm by design, clear by default.
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
