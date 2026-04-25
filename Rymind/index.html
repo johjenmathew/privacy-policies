@@ -117,7 +117,13 @@
               Rymind does not sell your reminders, tasks, checklist items, selected contact information,
               or shared-content payloads.
             </p>
-            <p>Rymind does not include advertising SDKs in the current app implementation.</p>
+            <p>
+              Rymind may include Google Mobile Ads SDK and Google's User Messaging Platform in builds that show
+              ads on selected app surfaces. These services can help request consent where required, serve ads,
+              measure ad performance, and manage privacy options. They do not receive your reminder titles, notes,
+              checklist text, selected contact names, phone numbers, or shared text or image payloads for ad
+              requests from Rymind.
+            </p>
             <p>
               If you choose optional Google sign-in and sync, reminder, task, and checklist data
               needed for sync is stored in Firebase services under your signed-in account so it can sync
@@ -144,6 +150,12 @@
               reminder-delivery access state, and limited operational breadcrumbs about reminder, backup,
               and sync actions. Rymind does not send reminder titles, notes, checklist text, selected contact
               names, phone numbers, or shared text or image payloads through crash diagnostics.
+            </p>
+            <p>
+              If ads are enabled in a shipped build, Google ad services may process consent status, app and device
+              metadata, advertising or app-instance identifiers, network context, and ad interaction signals needed
+              to request, deliver, measure, or limit ads. This ad-related processing is controlled by Google services
+              and applicable regional consent requirements, not by your reminder or task content.
             </p>
             <div class="callout">
               Release telemetry is limited to product health and operational measurement. User-authored reminder
@@ -177,6 +189,10 @@
               by Firebase Analytics to help measure app activation, retention, follow-through, and feature adoption.
             </p>
             <p>
+              If ads are enabled in a release build, ad-request and consent-related metadata may also be processed
+              by Google ad services to support ad delivery and privacy compliance.
+            </p>
+            <p>
               Data remains on your device until you edit it, delete it, clear the app's data, restore a replacement
               backup, or uninstall the app. If sync is enabled, synced cloud copies may remain until the
               corresponding items are deleted through sync or the account or provider data is removed.
@@ -193,6 +209,7 @@
               <li>Full-screen intent, to present alarm UI when appropriate</li>
               <li>Wake lock and boot completed support, to reschedule and deliver alarms reliably after restart</li>
               <li>Network access and network-state detection, when optional sync and release telemetry features are available</li>
+              <li>Ad and consent services, when ads are enabled in the shipped build</li>
             </ul>
             <p>
               Rymind does not request <code>READ_CONTACTS</code> or <code>CALL_PHONE</code>. Contact selection
@@ -211,6 +228,7 @@
               <li>Export a backup file and restore a backup after reviewing the restore preview</li>
               <li>Disable or deny notification and alarm-related access in Android settings</li>
               <li>Sign out of sync while keeping local device data</li>
+              <li>Review ad privacy options when they are required for your region and shown in the app</li>
               <li>Clear app data or uninstall the app to remove locally stored data</li>
             </ul>
             <p>
