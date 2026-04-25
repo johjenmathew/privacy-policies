@@ -6,7 +6,7 @@
   <title>Rymind Privacy Policy</title>
   <meta
     name="description"
-    content="Privacy Policy for Rymind, including reminders, tasks, backup, optional Android sync, analytics, and crash diagnostics."
+    content="Privacy Policy for Rymind, including reminders, tasks, backup, optional Android sync, ads, Remove ads purchase restore, analytics, and crash diagnostics."
   />
   <link rel="stylesheet" href="rymind-site.css" />
 </head>
@@ -29,6 +29,7 @@
             <div class="meta-pill">Last updated: April 25, 2026</div>
             <div class="meta-pill">Package: com.avora.planner</div>
             <div class="meta-pill">Optional Android sync</div>
+            <div class="meta-pill">Optional Remove ads purchase</div>
           </div>
           <div class="hero-actions">
             <a class="action-button action-button--primary" href="guide.html">Open user guide</a>
@@ -88,6 +89,13 @@
               streaks and milestone state, theme and language preferences, and Android permission state remain local
               to the device.
             </p>
+            <p>
+              If you choose the optional <strong>Remove ads</strong> purchase, Rymind may handle Google Play purchase
+              status, purchase tokens, order IDs, product IDs, verification timestamps, cached entitlement state,
+              and a hashed purchase-token reference needed to restore the purchase and confirm whether ads should
+              stay removed. This flow does not include your reminder, task, checklist, contact-selection, or
+              shared-content text.
+            </p>
           </article>
 
           <article class="section-card" id="section-2">
@@ -135,6 +143,13 @@
               and control release rollout. These systems are used for security and release control, not advertising,
               and do not receive your reminder, task, checklist, contact-selection, or shared-content text as
               configuration values.
+            </p>
+            <p>
+              If you choose the optional <strong>Remove ads</strong> purchase, Google Play Billing may process purchase,
+              restore, order, and payment-state metadata needed to complete the transaction and restore it on your
+              other Android devices that use the same Play account. Rymind may verify purchase state through Firebase
+              Functions and the Google Play Developer API, and may keep admin-only billing audit records that do not
+              include your reminder or task content.
             </p>
             <p>
               Rymind may include Firebase Analytics in release builds to collect limited product-usage
@@ -193,6 +208,12 @@
               by Google ad services to support ad delivery and privacy compliance.
             </p>
             <p>
+              If you use <strong>Remove ads</strong>, limited purchase-verification metadata and cached entitlement
+              state may also be stored locally so Rymind can restore the ad-free state calmly on startup and re-check
+              it when the app returns to the foreground. Admin-only billing verification records may also be stored
+              in Firebase for audit and refund or revoke handling.
+            </p>
+            <p>
               Data remains on your device until you edit it, delete it, clear the app's data, restore a replacement
               backup, or uninstall the app. If sync is enabled, synced cloud copies may remain until the
               corresponding items are deleted through sync or the account or provider data is removed.
@@ -228,6 +249,7 @@
               <li>Export a backup file and restore a backup after reviewing the restore preview</li>
               <li>Disable or deny notification and alarm-related access in Android settings</li>
               <li>Sign out of sync while keeping local device data</li>
+              <li>Buy <strong>Remove ads</strong> as a one-time purchase or restore it later through the same Google Play account</li>
               <li>Review ad privacy options when they are required for your region and shown in the app</li>
               <li>Clear app data or uninstall the app to remove locally stored data</li>
             </ul>
