@@ -6,7 +6,7 @@
   <title>Rymind User Guide</title>
   <meta
     name="description"
-    content="User documentation for Rymind, including navigation, reminders, tasks, delivery setup, widgets, backup, sync beta, and support."
+    content="User documentation for Rymind, including navigation, reminders, tasks, delivery setup, widgets, backup, sync, and support."
   />
   <link rel="stylesheet" href="rymind-site.css" />
 </head>
@@ -22,11 +22,11 @@
           <h1>Use Rymind with confidence</h1>
           <p class="hero-subtitle">
             Rymind is a premium Android reminder app built for dependable follow-through. This guide walks through
-            the core app experience, delivery setup, widgets, backup, sync beta, and the details most people need
+            the core app experience, delivery setup, widgets, backup, sync setup, and the details most people need
             to feel at home quickly.
           </p>
           <div class="hero-meta">
-            <div class="meta-pill">Covers the current 1.5.0 release target</div>
+            <div class="meta-pill">Covers the current 1.6.0 release target</div>
             <div class="meta-pill">Android-first reminder app</div>
             <div class="meta-pill">Last updated: April 25, 2026</div>
           </div>
@@ -77,7 +77,7 @@
               </div>
               <div class="mini-card">
                 <strong>Keep trust high</strong>
-                <span>Delivery setup, alarms, widgets, backup, and sync beta all stay grounded in reliability.</span>
+                <span>Delivery setup, alarms, widgets, backup, and sync all stay grounded in reliability.</span>
               </div>
             </div>
           </article>
@@ -182,16 +182,21 @@
             </p>
             <ul>
               <li><strong>Backup file</strong>: save a local backup of reminders, tasks, and checklist items and restore it later after reviewing a restore preview.</li>
-              <li><strong>Optional Google sign-in</strong>: turn on Android sync beta for signed-in phones when it is available in your build.</li>
+              <li><strong>Optional Google sign-in</strong>: turn on Android sync for signed-in phones when it is available in your build.</li>
             </ul>
             <p>
-              Sync beta is intentionally narrow. It is meant for Android-to-Android reminder and task syncing, not for shared lists,
-              web access, or iPhone support. When both of your signed-in Android phones are active, changes can show up quickly.
-              If another phone was closed or offline, it should catch up when the app is opened again or when the connection returns.
+              Sync stays local-first. After you connect Google, Rymind can check what is already on this phone and what is already
+              in the cloud. If both sides already contain data, the app offers one calm one-time choice: <strong>Merge both</strong>,
+              <strong>Use cloud on this phone</strong>, or <strong>Cancel and back up first</strong>.
             </p>
             <p>
-              Signing out stops cloud sync but keeps the local content already stored on that phone. Backup files remain useful even
-              if you do not use sync beta at all.
+              If you choose cloud on this phone, Rymind creates a restore point first and then replaces local reminder and task
+              data with the cloud copy. If you cancel, the app stays local-only until you decide later. Signing out stops cloud
+              sync but keeps the local content already stored on that phone. Backup files remain useful whether you use sync or not.
+            </p>
+            <p>
+              Sync stays optional. The core promise stays the same: reminders still work on this phone without an account,
+              without internet, and after sign-out.
             </p>
           </article>
 
@@ -206,7 +211,7 @@
               <li><strong>Appearance</strong>: theme and visual comfort.</li>
               <li><strong>App language</strong>: switch between supported app languages.</li>
               <li><strong>Delivery</strong>: review alert readiness, test delivery, and see support diagnostics.</li>
-              <li><strong>Backup &amp; sync</strong>: local backup and optional sync beta account status.</li>
+              <li><strong>Backup &amp; sync</strong>: local backup, optional sign-in, sync setup, and sync status.</li>
               <li><strong>Help &amp; privacy</strong>: support links, privacy access, and support details.</li>
             </ul>
             <p>
@@ -236,7 +241,11 @@
                 <span>No. Signing out stops cloud sync but keeps the local data already on the device.</span>
               </div>
               <div class="faq-item">
-                <strong>Does sync beta wake every offline device instantly?</strong>
+                <strong>What happens if this phone and the cloud both already have data?</strong>
+                <span>Rymind asks you to merge both, use the cloud copy on this phone, or cancel and back up first.</span>
+              </div>
+              <div class="faq-item">
+                <strong>Does sync wake every offline device instantly?</strong>
                 <span>No. Active signed-in phones can update quickly, while closed or disconnected phones catch up when they reopen or reconnect.</span>
               </div>
               <div class="faq-item">

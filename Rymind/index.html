@@ -6,7 +6,7 @@
   <title>Rymind Privacy Policy</title>
   <meta
     name="description"
-    content="Privacy Policy for Rymind, including reminders, tasks, backup, optional Android sync beta, analytics, and crash diagnostics."
+    content="Privacy Policy for Rymind, including reminders, tasks, backup, optional Android sync, analytics, and crash diagnostics."
   />
   <link rel="stylesheet" href="rymind-site.css" />
 </head>
@@ -28,7 +28,7 @@
           <div class="hero-meta">
             <div class="meta-pill">Last updated: April 25, 2026</div>
             <div class="meta-pill">Package: com.avora.planner</div>
-            <div class="meta-pill">Optional Android sync beta</div>
+            <div class="meta-pill">Optional Android sync</div>
           </div>
           <div class="hero-actions">
             <a class="action-button action-button--primary" href="guide.html">Open user guide</a>
@@ -79,11 +79,14 @@
             </p>
             <p>Rymind does not require account sign-in for normal use.</p>
             <p>
-              If Google sign-in and sync beta are available in your build, signing in remains optional.
-              Signed-in beta users may sync reminders, tasks, checklist items, repeat and completion state,
-              and deletion state through Firebase Authentication and Cloud Firestore. Device-local delivery
-              diagnostics, widget prompt state, engagement streaks and milestone state, theme and language
-              preferences, and Android permission state remain local to the device.
+              If you choose optional Google sign-in and sync, signing in remains optional. On first
+              connection, Rymind may ask how you want to link the local data already on this phone with the data
+              already stored in your Google account. Signed-in phones may sync reminders, tasks, checklist items,
+              repeat and completion state, deletion state, and limited sync metadata such as stable item IDs,
+              ordering timestamps, install identifiers, and sync enrollment state needed to keep changes ordered
+              and reduce unintended overwrites. Device-local delivery diagnostics, widget prompt state, engagement
+              streaks and milestone state, theme and language preferences, and Android permission state remain local
+              to the device.
             </p>
           </article>
 
@@ -102,7 +105,7 @@
               <li>Applying your selected theme and language preferences</li>
               <li>Preparing reminder drafts from text or images you explicitly share with the app</li>
               <li>Exporting or importing backup files of reminders, tasks, and checklist items</li>
-              <li>Syncing signed-in beta reminder and task data across your Android devices when sync beta is enabled</li>
+              <li>Syncing signed-in reminder and task data across your Android devices when sync is enabled</li>
             </ul>
           </article>
 
@@ -116,9 +119,16 @@
             </p>
             <p>Rymind does not include advertising SDKs in the current app implementation.</p>
             <p>
-              If you choose optional Google sign-in and sync beta, reminder, task, and checklist data
+              If you choose optional Google sign-in and sync, reminder, task, and checklist data
               needed for sync is stored in Firebase services under your signed-in account so it can sync
               across your Android devices. This data is not used for advertising.
+            </p>
+            <p>
+              If sync or its backend rollout controls are active, Firebase App Check and Firebase Remote Config
+              may process app-instance, device-integrity, or rollout-configuration metadata to protect backend access
+              and control release rollout. These systems are used for security and release control, not advertising,
+              and do not receive your reminder, task, checklist, contact-selection, or shared-content text as
+              configuration values.
             </p>
             <p>
               Rymind may include Firebase Analytics in release builds to collect limited product-usage
@@ -150,8 +160,9 @@
               you choose through Android's file picker.
             </p>
             <p>
-              If you enable sync beta, a synced copy of reminders, tasks, checklist items, repeat settings,
-              completion state, and deletion state may also be stored in Firebase Cloud Firestore under your account.
+              If you enable sync, a synced copy of reminders, tasks, checklist items, repeat settings,
+              completion state, deletion state, and the limited sync-ordering metadata needed to keep signed-in
+              devices consistent may also be stored in Firebase Cloud Firestore under your account.
             </p>
             <p>
               Rymind does not operate a custom developer server for your reminder or task content in the current
@@ -167,7 +178,7 @@
             </p>
             <p>
               Data remains on your device until you edit it, delete it, clear the app's data, restore a replacement
-              backup, or uninstall the app. If sync beta is enabled, synced cloud copies may remain until the
+              backup, or uninstall the app. If sync is enabled, synced cloud copies may remain until the
               corresponding items are deleted through sync or the account or provider data is removed.
             </p>
           </article>
@@ -196,9 +207,10 @@
             <ul>
               <li>Use Rymind without signing in</li>
               <li>Delete reminders and tasks from within the app</li>
+              <li>Connect Google and choose how to link local and cloud data, or cancel and stay local-only</li>
               <li>Export a backup file and restore a backup after reviewing the restore preview</li>
               <li>Disable or deny notification and alarm-related access in Android settings</li>
-              <li>Sign out of sync beta while keeping local device data</li>
+              <li>Sign out of sync while keeping local device data</li>
               <li>Clear app data or uninstall the app to remove locally stored data</li>
             </ul>
             <p>
